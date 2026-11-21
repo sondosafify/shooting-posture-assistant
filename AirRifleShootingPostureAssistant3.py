@@ -37,10 +37,24 @@ MODEL_CHOICES = {"Heavy (most accurate)": 2, "Full (faster)": 1}
 # Hard-coded reference photos. The D:\ paths work on your own PC; the
 # assets/ copies are what a hosted link uses (the server cannot see D:\).
 # --------------------------------------------------------------------------
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
 REFERENCE_PATHS = {
-    "Side": [r"D:\Portfolio\New folder\Screenshot 2026-11-21 040425.png", "assets/side.png"],
-    "Front": [r"D:\Portfolio\New folder\Screenshot 2026-11-21 035935.png", "assets/front.png"],
-    "Back": [r"D:\Portfolio\New folder\Screenshot 2026-11-21 040205.png", "assets/back.png"],
+    "Side": [
+        str(BASE_DIR / "assets" / "side.png"),
+        str(BASE_DIR / "assetsside.png"),
+    ],
+    "Front": [
+        str(BASE_DIR / "assets" / "front.png"),
+        str(BASE_DIR / "assetsfront.png"),
+    ],
+    "Back": [
+        str(BASE_DIR / "assets" / "back.png"),
+        str(BASE_DIR / "assetsback.png"),
+    ],
 }
 VIEWS = list(REFERENCE_PATHS)
 
